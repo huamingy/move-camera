@@ -129,6 +129,7 @@ module.exports = {
     host: 'localhost',
     port: '3000',
     open: true,
+    hot: false,
     static: `./src/`, //允许配置从跟目录下提供静态文件
   },
   mode: 'development',

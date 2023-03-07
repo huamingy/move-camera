@@ -8,6 +8,12 @@ import { yunGroup } from './plane.js'
 
 import { AddMeshIntoArr, animate } from './fun.js'
 
+if (module.hot) {
+  module.hot.accept('./fun.js')
+  module.hot.accept('./scene.js')
+  module.hot.accept('./plane.js')
+}
+
 var Textureloader = new THREE.TextureLoader()
 var map = Textureloader.load('../img/page.jpg')
 

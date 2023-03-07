@@ -46,7 +46,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif|webp|svg)$/,
+        test: /\.(png|jpe?g|gif|webp|svg|mp3)$/,
         type: 'asset',
         parser: {
           dataUrlCondition: {
@@ -78,6 +78,7 @@ module.exports = {
         { from: 'src/model', to: 'model' },
         { from: 'src/img/YUNpng', to: 'img/YUNpng' },
         { from: 'src/img/one', to: 'img/one' },
+        // { from: 'src/music', to: 'music' },
       ],
     }),
     new HtmlWebpackPlugin({

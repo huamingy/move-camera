@@ -5,8 +5,8 @@ import { CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer.js'
 import { GUI } from 'dat.gui'
 import $ from 'jquery'
 import TWEEN from '@tweenjs/tween.js'
+import { Plane } from 'three'
 
-const gui = new GUI()
 var chooseMesh,
   granaryArrclick = [],
   granaryArrdbclick = [],
@@ -107,7 +107,7 @@ function moveCaream(meshName, posx, posy, posz) {
   if (meshName != null) {
     var havingmesh = scene.getObjectByName(meshName)
 
-    FloorPosition = havingmesh.getWorldPosition()
+    FloorPosition = havingmesh.gethreerldPosition()
     var a = FloorPosition.x + posx,
       b = FloorPosition.y + posy,
       c = FloorPosition.z + posz
@@ -171,7 +171,7 @@ function AddMeshIntoArr(meshname, model) {
 
 function addlabel(path, x, y) {
   $('#img').attr('src', `../img/one/` + path.name + `.png`)
-  var position = path.getWorldPosition()
+  var position = path.gethreerldPosition()
 
   label.position.set((position.x += x), (position.y += y), position.z)
   label.element.style.visibility = 'visible'
@@ -186,13 +186,50 @@ var giftaglabel = new CSS3DObject(giftag)
 giftaglabel.scale.set(5.25, 5.25, 5.25)
 giftaglabel.position.set(-1956, -7132, 1)
 scene.add(giftaglabel)
-// label.scale.set(3, 3, 3)
 
-// var mesh = scene.getObjectByName('yun9')
+var two_GIF = document.getElementById('two-GIF')
+var two_GIFlabel = new CSS3DObject(two_GIF)
+two_GIFlabel.scale.set(4.7, 4.7, 4.7)
+two_GIFlabel.position.set(854, -984, 1)
+scene.add(two_GIFlabel)
+
+var three_GIF = document.getElementById('three-GIF')
+var three_GIFlabel = new CSS3DObject(three_GIF)
+three_GIFlabel.scale.set(4.9, 4.9, 4.9)
+three_GIFlabel.position.set(7464, 3460, 1)
+scene.add(three_GIFlabel)
+
+var four_GIF = document.getElementById('four-GIF')
+var four_GIFlabel = new CSS3DObject(four_GIF)
+four_GIFlabel.scale.set(4.55, 4.55, 4.55)
+four_GIFlabel.position.set(11932, 128, 1)
+scene.add(four_GIFlabel)
+
+var five_GIF = document.getElementById('five-GIF')
+var five_GIFlabel = new CSS3DObject(five_GIF)
+five_GIFlabel.scale.set(5, 5, 5)
+five_GIFlabel.position.set(11128, -4658, 1)
+scene.add(five_GIFlabel)
+
+var six_GIF = document.getElementById('six-GIF')
+var six_GIFlabel = new CSS3DObject(six_GIF)
+six_GIFlabel.scale.set(5.2, 5.2, 5.2)
+six_GIFlabel.position.set(-12160, 170, 1)
+scene.add(six_GIFlabel)
+
+var seven_GIF = document.getElementById('seven-GIF')
+var seven_GIFlabel = new CSS3DObject(seven_GIF)
+seven_GIFlabel.scale.set(5.55, 5.55, 5.55)
+seven_GIFlabel.position.set(-4208, 3886, 1)
+scene.add(seven_GIFlabel)
+
+// var mesh = Plane
+
+// const gui = new GUI()
 // const params = {
 //   scale: 2,
-//   x: giftaglabel.position.x,
-//   y: giftaglabel.position.y,
+//   x: mesh.position.x,
+//   y: mesh.position.y,
 // }
 
 // gui
@@ -200,7 +237,7 @@ scene.add(giftaglabel)
 //   .min(0.1)
 //   .max(10)
 //   .step(0.05)
-//   .onChange((d) => giftaglabel.scale.set(d, d, d))
+//   .onChange((d) => mesh.scale.set(d, d, d))
 
 // var ax, ay
 // gui
@@ -218,8 +255,8 @@ scene.add(giftaglabel)
 //   .onChange((d) => (ay = d))
 
 function animate(time) {
-  // giftaglabel.position.x = ax
-  // giftaglabel.position.y = ay
+  // mesh.position.x = ax
+  // mesh.position.y = ay
 
   TWEEN.update()
   // stats.update(); // 初始化stats后，需要在这里执行update方法才能实现fps实时监控
