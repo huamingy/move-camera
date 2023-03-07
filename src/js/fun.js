@@ -97,7 +97,7 @@ function dbchoose() {
     dbchooseMesh = intersects[0].object
     console.log('dbchooseMesh: ', dbchooseMesh)
 
-    moveCaream(dbchooseMesh.name, 0, 0, 15500)
+    moveCaream(dbchooseMesh.name, 0, 0, 14500)
   }
 }
 addEventListener('dblclick', dbchoose) // 监听窗口鼠标单击事件
@@ -107,7 +107,7 @@ function moveCaream(meshName, posx, posy, posz) {
   if (meshName != null) {
     var havingmesh = scene.getObjectByName(meshName)
 
-    FloorPosition = havingmesh.gethreerldPosition()
+    FloorPosition = havingmesh.getWorldPosition()
     var a = FloorPosition.x + posx,
       b = FloorPosition.y + posy,
       c = FloorPosition.z + posz
@@ -137,7 +137,7 @@ function moveCaream(meshName, posx, posy, posz) {
   }
   // 使用tween动画
   var tween = new TWEEN.Tween(p1)
-    .to(p2, 6000)
+    .to(p2, 3000)
     .easing(TWEEN.Easing.Quadratic.InOut)
   tween.onUpdate(() => {
     // 修改相机位置
@@ -171,7 +171,7 @@ function AddMeshIntoArr(meshname, model) {
 
 function addlabel(path, x, y) {
   $('#img').attr('src', `../img/one/` + path.name + `.png`)
-  var position = path.gethreerldPosition()
+  var position = path.getWorldPosition()
 
   label.position.set((position.x += x), (position.y += y), position.z)
   label.element.style.visibility = 'visible'
@@ -183,53 +183,53 @@ scene.add(label)
 label.scale.set(4, 4, 4)
 var giftag = document.getElementById('one-GIF')
 var giftaglabel = new CSS3DObject(giftag)
-giftaglabel.scale.set(5.25, 5.25, 5.25)
-giftaglabel.position.set(-1956, -7132, 1)
+giftaglabel.scale.set(5.6, 5.6, 5.6)
+giftaglabel.position.set(-2376, -8298, 1)
 scene.add(giftaglabel)
 
 var two_GIF = document.getElementById('two-GIF')
 var two_GIFlabel = new CSS3DObject(two_GIF)
-two_GIFlabel.scale.set(4.7, 4.7, 4.7)
-two_GIFlabel.position.set(854, -984, 1)
+two_GIFlabel.scale.set(4.8, 4.8, 4.8)
+two_GIFlabel.position.set(674, -2026, 1)
 scene.add(two_GIFlabel)
 
 var three_GIF = document.getElementById('three-GIF')
 var three_GIFlabel = new CSS3DObject(three_GIF)
-three_GIFlabel.scale.set(4.9, 4.9, 4.9)
-three_GIFlabel.position.set(7464, 3460, 1)
+three_GIFlabel.scale.set(4.5, 4.5, 4.5)
+three_GIFlabel.position.set(8044, 2488, 1)
 scene.add(three_GIFlabel)
 
 var four_GIF = document.getElementById('four-GIF')
 var four_GIFlabel = new CSS3DObject(four_GIF)
-four_GIFlabel.scale.set(4.55, 4.55, 4.55)
-four_GIFlabel.position.set(11932, 128, 1)
+four_GIFlabel.scale.set(4.8, 4.8, 4.8)
+four_GIFlabel.position.set(12350, -804, 1)
 scene.add(four_GIFlabel)
 
 var five_GIF = document.getElementById('five-GIF')
 var five_GIFlabel = new CSS3DObject(five_GIF)
-five_GIFlabel.scale.set(5, 5, 5)
-five_GIFlabel.position.set(11128, -4658, 1)
+five_GIFlabel.scale.set(5.35, 5.35, 5.35)
+five_GIFlabel.position.set(11452, -5864, 1)
 scene.add(five_GIFlabel)
 
 var six_GIF = document.getElementById('six-GIF')
 var six_GIFlabel = new CSS3DObject(six_GIF)
-six_GIFlabel.scale.set(5.2, 5.2, 5.2)
-six_GIFlabel.position.set(-12160, 170, 1)
+six_GIFlabel.scale.set(5.45, 5.45, 5.45)
+six_GIFlabel.position.set(-13098, -834, 1)
 scene.add(six_GIFlabel)
 
 var seven_GIF = document.getElementById('seven-GIF')
 var seven_GIFlabel = new CSS3DObject(seven_GIF)
-seven_GIFlabel.scale.set(5.55, 5.55, 5.55)
-seven_GIFlabel.position.set(-4208, 3886, 1)
+seven_GIFlabel.scale.set(5.7, 5.75, 5.75)
+seven_GIFlabel.position.set(-4628, 3186, 1)
 scene.add(seven_GIFlabel)
 
-// var mesh = Plane
+// var mesh = six_GIFlabel
 
 // const gui = new GUI()
 // const params = {
-//   scale: 2,
-//   x: mesh.position.x,
-//   y: mesh.position.y,
+//   scale: 5,
+//   x: -12160,
+//   y: 170,
 // }
 
 // gui
